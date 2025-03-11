@@ -16,12 +16,12 @@ import (
 	"testing"
 
 	"github.com/dhui/dktest"
-	"github.com/golang-migrate/migrate/v4"
-	"github.com/golang-migrate/migrate/v4/database"
+	"github.com/kokizzu/migrate"
+	"github.com/kokizzu/migrate/database"
 
-	dt "github.com/golang-migrate/migrate/v4/database/testing"
-	"github.com/golang-migrate/migrate/v4/dktesting"
-	_ "github.com/golang-migrate/migrate/v4/source/file"
+	dt "github.com/kokizzu/migrate/database/testing"
+	"github.com/kokizzu/migrate/dktesting"
+	_ "github.com/kokizzu/migrate/source/file"
 )
 
 const (

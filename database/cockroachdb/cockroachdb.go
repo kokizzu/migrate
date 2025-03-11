@@ -10,9 +10,9 @@ import (
 	"strconv"
 
 	"github.com/cockroachdb/cockroach-go/v2/crdb"
-	"github.com/golang-migrate/migrate/v4"
-	"github.com/golang-migrate/migrate/v4/database"
 	"github.com/hashicorp/go-multierror"
+	"github.com/kokizzu/migrate"
+	"github.com/kokizzu/migrate/database"
 	"github.com/lib/pq"
 	"go.uber.org/atomic"
 )

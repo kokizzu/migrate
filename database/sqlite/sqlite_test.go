@@ -8,9 +8,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/golang-migrate/migrate/v4"
-	dt "github.com/golang-migrate/migrate/v4/database/testing"
-	_ "github.com/golang-migrate/migrate/v4/source/file"
+	"github.com/kokizzu/migrate"
+	dt "github.com/kokizzu/migrate/database/testing"
+	_ "github.com/kokizzu/migrate/source/file"
 	_ "modernc.org/sqlite"
 )
 
@@ -23,7 +23,7 @@ func Test(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	dt.Test(t, d, []byte("CREATE TABLE t (Qty int, Name string);"))
+	dt.Test(t, d, []byte("CREATE TABLE t (Qty INT, Name string);"))
 }
 
 func TestMigrate(t *testing.T) {
@@ -129,5 +129,5 @@ func TestMigrateWithDirectoryNameContainsWhitespaces(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	dt.Test(t, d, []byte("CREATE TABLE t (Qty int, Name string);"))
+	dt.Test(t, d, []byte("CREATE TABLE t (Qty INT, Name string);"))
 }

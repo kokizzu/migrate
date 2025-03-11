@@ -12,10 +12,10 @@ import (
 	"github.com/ClickHouse/clickhouse-go/v2"
 	"go.uber.org/atomic"
 
-	"github.com/golang-migrate/migrate/v4"
-	"github.com/golang-migrate/migrate/v4/database"
-	"github.com/golang-migrate/migrate/v4/database/multistmt"
 	"github.com/hashicorp/go-multierror"
+	"github.com/kokizzu/migrate"
+	"github.com/kokizzu/migrate/database"
+	"github.com/kokizzu/migrate/database/multistmt"
 )
 
 var (

@@ -3,7 +3,7 @@ package cassandra
 import (
 	"context"
 	"fmt"
-	"github.com/golang-migrate/migrate/v4"
+	"github.com/kokizzu/migrate"
 	"strconv"
 	"testing"
 )
@@ -14,9 +14,9 @@ import (
 )
 
 import (
-	dt "github.com/golang-migrate/migrate/v4/database/testing"
-	"github.com/golang-migrate/migrate/v4/dktesting"
-	_ "github.com/golang-migrate/migrate/v4/source/file"
+	dt "github.com/kokizzu/migrate/database/testing"
+	"github.com/kokizzu/migrate/dktesting"
+	_ "github.com/kokizzu/migrate/source/file"
 )
 
 var (

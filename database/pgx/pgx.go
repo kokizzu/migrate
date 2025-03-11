@@ -16,13 +16,13 @@ import (
 
 	"go.uber.org/atomic"
 
-	"github.com/golang-migrate/migrate/v4"
-	"github.com/golang-migrate/migrate/v4/database"
-	"github.com/golang-migrate/migrate/v4/database/multistmt"
 	"github.com/hashicorp/go-multierror"
 	"github.com/jackc/pgconn"
 	"github.com/jackc/pgerrcode"
 	_ "github.com/jackc/pgx/v4/stdlib"
+	"github.com/kokizzu/migrate"
+	"github.com/kokizzu/migrate/database"
+	"github.com/kokizzu/migrate/database/multistmt"
 	"github.com/lib/pq"
 )
 

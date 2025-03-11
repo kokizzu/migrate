@@ -7,16 +7,16 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/golang-migrate/migrate/v4"
+	"github.com/kokizzu/migrate"
 	"io"
 	"strings"
 	"testing"
 
 	"github.com/dhui/dktest"
 
-	dt "github.com/golang-migrate/migrate/v4/database/testing"
-	"github.com/golang-migrate/migrate/v4/dktesting"
-	_ "github.com/golang-migrate/migrate/v4/source/file"
+	dt "github.com/kokizzu/migrate/database/testing"
+	"github.com/kokizzu/migrate/dktesting"
+	_ "github.com/kokizzu/migrate/source/file"
 
 	_ "github.com/nakagami/firebirdsql"
 )
@@ -96,7 +96,7 @@ func Test(t *testing.T) {
 				t.Error(err)
 			}
 		}()
-		dt.Test(t, d, []byte("SELECT Count(*) FROM rdb$relations"))
+		dt.Test(t, d, []byte("SELECT COUNT(*) FROM rdb$relations"))
 	})
 }
 
@@ -200,7 +200,7 @@ func Test_Lock(t *testing.T) {
 			}
 		}()
 
-		dt.Test(t, d, []byte("SELECT Count(*) FROM rdb$relations"))
+		dt.Test(t, d, []byte("SELECT COUNT(*) FROM rdb$relations"))
 
 		ps := d.(*Firebird)
 

@@ -12,10 +12,10 @@ import (
 	"github.com/rqlite/gorqlite"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/golang-migrate/migrate/v4"
-	dt "github.com/golang-migrate/migrate/v4/database/testing"
-	"github.com/golang-migrate/migrate/v4/dktesting"
-	_ "github.com/golang-migrate/migrate/v4/source/file"
+	"github.com/kokizzu/migrate"
+	dt "github.com/kokizzu/migrate/database/testing"
+	"github.com/kokizzu/migrate/dktesting"
+	_ "github.com/kokizzu/migrate/source/file"
 )
 
 var defaultPort uint16 = 4001
@@ -85,7 +85,7 @@ func Test(t *testing.T) {
 		d, err := r.Open(connectString)
 		assert.NoError(t, err)
 
-		dt.Test(t, d, []byte("CREATE TABLE t (Qty int, Name string);"))
+		dt.Test(t, d, []byte("CREATE TABLE t (Qty INT, Name string);"))
 	})
 }
 
